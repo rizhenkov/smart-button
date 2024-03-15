@@ -101,6 +101,7 @@ const submitPin = () => {
               </div>
 
               <UForm
+                autocomplete="off"
                 @submit="submitPin"
               >
                 <UInput

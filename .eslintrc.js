@@ -133,20 +133,6 @@ module.exports = {
       // as it's not able to detect their usage into the template
       // We disable this rule and only keep it for Vue files
       rules: { "vue/no-unused-properties": "off" },
-    },
-    {
-      files: ['**/*.cy.{js,jsx,ts,tsx}', '**/cypress/**/*.{js,jsx,ts,tsx}'],
-      globals: {
-        cy: 'readonly',
-      },
-      rules: {
-        'cypress/unsafe-to-chain-command': 'off',
-      },
-      extends: [
-        // Add Cypress-specific lint rules, globals and Cypress plugin
-        // See https://github.com/cypress-io/eslint-plugin-cypress#rules
-        'plugin:cypress/recommended',
-      ],
     }
   ],
 }
