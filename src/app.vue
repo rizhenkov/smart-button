@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Smart Button'
+})
+
 import { useStorage } from '@vueuse/core'
 const toast = useToast()
 const { vibrate, isSupported: isVibrateSupported } = useVibrate({ pattern: [10, 30] })
