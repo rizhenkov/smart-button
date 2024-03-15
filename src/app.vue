@@ -2,7 +2,6 @@
 import { useStorage } from '@vueuse/core'
 const toast = useToast()
 const { vibrate, isSupported: isVibrateSupported } = useVibrate({ pattern: [10, 30] })
-const { isInstallable, promptInstall } = useInstallPrompt()
 const pin = useStorage('pin', '')
 const isPinModalOpen = ref(false)
 
@@ -19,10 +18,6 @@ const pushButton = async () => {
         pin: pin.value
       })
     })
-
-    if (isInstallable.value) {
-      promptInstall()
-    }
   } catch (e: unknown) {
     console.error(e)
     if (e.data && e.data.statusCode === 401) {

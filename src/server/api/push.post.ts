@@ -18,7 +18,6 @@ export default defineEventHandler(async (event) => {
   const apiUrl = runtimeConfig.smartThingsApiUrl
   const apiToken = runtimeConfig.smartThingsApiToken
   const sceneId = runtimeConfig.smartThingsSceneId
-  /*
   await $fetch(`${apiUrl}/v1/scenes/${sceneId}/execute`, {
     method: 'POST',
     headers: {
@@ -26,7 +25,6 @@ export default defineEventHandler(async (event) => {
       'Content-Type': 'application/json'
     }
   })
-*/
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve(null)
