@@ -1,0 +1,30 @@
+{
+  "name": "smart-button-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.14.2",
+    "@vueuse/nuxt": "^10.9.0",
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@types/eslint": "^8",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "sass": "^1.72.0"
+  }
+}
