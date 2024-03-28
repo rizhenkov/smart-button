@@ -60,77 +60,89 @@ const submitPin = () => {
 </script>
 
 <template>
-  <UContainer>
-    <div class="flex justify-center items-center">
-      <div class=" relative">
+  <div>
+    <div class="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="flex justify-end p-5 absolute top-0 right-0">
         <UButton
-          icon="i-heroicons-power"
-          square
-          size="xl"
-          class="rounded-full active:bg-green-500 dark:active:bg-green-600"
-          :disabled="loading"
-          type="button"
-          @click="pushButton"
+          icon="i-heroicons-key"
+          size="xs"
+          variant="soft"
+          @click="isPinModalOpen = true"
         />
-        <div
-          v-if="loading"
-          class="absolute top-0 bottom-0 left-0 right-0 flex justify-stretch items-stretch -z-10"
-        >
-          <div class="lds-ring w-full h-full">
-            <div />
-            <div />
-            <div />
-            <div />
+      </div>
+      <UContainer>
+        <div class="flex justify-center items-center">
+          <div class=" relative">
+            <UButton
+              icon="i-heroicons-power"
+              square
+              size="xl"
+              class="rounded-full active:bg-green-500 dark:active:bg-green-600"
+              :disabled="loading"
+              type="button"
+              @click="pushButton"
+            />
+            <div
+              v-if="loading"
+              class="absolute top-0 bottom-0 left-0 right-0 flex justify-stretch items-stretch -z-10"
+            >
+              <div class="lds-ring w-full h-full">
+                <div />
+                <div />
+                <div />
+                <div />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <ClientOnly>
+          <UModal
+            v-model="isPinModalOpen"
+            prevent-close
+            :ui="{
+              container: 'flex min-h-full items-center justify-center text-center'
+            }"
+          >
+            <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+              <div class="py-12">
+                <div class="text-center">
+                  Please enter your PIN to use the Smart button
+                </div>
+
+                <UForm
+                  autocomplete="off"
+                  @submit="submitPin"
+                >
+                  <UInput
+                    v-model="pin"
+                    type="password"
+                    class="mt-4 mx-auto max-w-32"
+                    size="xl"
+                    autofocus
+                    data-1p-ignore
+                    aria-autocomplete="none"
+                    autocomplete="off"
+                    inputmode="numeric"
+                  />
+                </UForm>
+              </div>
+
+              <template #footer>
+                <UButton
+                  class="w-full justify-center"
+                  :loading="loading"
+                  :disabled="pin.length === 0"
+                  label="Save PIN"
+                  size="xl"
+                  @click="submitPin"
+                />
+              </template>
+            </UCard>
+          </UModal>
+        </ClientOnly>
+      </UContainer>
     </div>
-    <ClientOnly>
-      <UModal
-        v-model="isPinModalOpen"
-        prevent-close
-        :ui="{
-          container: 'flex min-h-full items-center justify-center text-center'
-        }"
-      >
-        <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
-          <div class="py-12">
-            <div class="text-center">
-              Please enter your PIN to use the Smart button
-            </div>
-
-            <UForm
-              autocomplete="off"
-              @submit="submitPin"
-            >
-              <UInput
-                v-model="pin"
-                type="password"
-                class="mt-4 mx-auto max-w-32"
-                size="xl"
-                autofocus
-                data-1p-ignore
-                aria-autocomplete="none"
-                autocomplete="off"
-                inputmode="numeric"
-              />
-            </UForm>
-          </div>
-
-          <template #footer>
-            <UButton
-              class="w-full justify-center"
-              :loading="loading"
-              :disabled="pin.length === 0"
-              label="Save PIN"
-              size="xl"
-              @click="submitPin"
-            />
-          </template>
-        </UCard>
-      </UModal>
-    </ClientOnly>
-  </UContainer>
+  </div>
 </template>
 
 <style lang="scss">
