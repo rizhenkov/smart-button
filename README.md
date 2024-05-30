@@ -7,6 +7,14 @@ It may be useful for guests or for neighbors.
 
 The button is protected by a PIN code that you can set.
 
+## Demo
+You can try the demo of this project at [bramka.vercel.app](https://bramka.vercel.app). Open this at one device and use PIN `000000`.
+
+And open the [bramka.vercel.app/test](https://bramka.vercel.app/test) page at another device or another window at least. Then you can see how the Tester reacts to the button press.
+You can imagine that the Tester is a SmartThings device such as a light bulb or a door lock.
+
+![](src/public/demo.gif)
+
 ## Deployment to Vercel
 Press button below to deploy this project to Vercel in one click.
 
@@ -14,7 +22,7 @@ Press button below to deploy this project to Vercel in one click.
 
 Next you will be asked to set the following environment variables:
 - `NUXT_SMART_THINGS_API_TOKEN` - your SmartThings API token (https://account.smartthings.com/tokens/new)
-- `NUXT_SMART_THINGS_SCENE_ID` - the ID of the SmartThings scene you want to launch (https://smart-button-psi.vercel.app/setup)
+- `NUXT_SMART_THINGS_SCENE_ID` - the ID of the SmartThings scene you want to launch (https://bramka.vercel.app/setup and click "How to get the Scene ID" button)
 - `NUXT_PIN_CODE` - the PIN code to protect the button
 
 ## Advanced Usage
