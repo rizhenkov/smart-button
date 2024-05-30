@@ -1,0 +1,23 @@
+{
+  "appName": "Smart Button",
+  "askPin": "Please enter your PIN to use the Smart button",
+  "savePinButton": "Save PIN",
+  "listScenesDescription": "To list scenes, you need to provide an API key with the permission {0}.",
+  "apiKeyInputLabel": "API Key",
+  "requestScenesButton": "Request Scenes",
+  "scenesList": "Scenes List",
+  "finishConfigurationAskTitle": "Please, finish the configuration",
+  "finishConfigurationAskDescription": "To use this app you need to set up environment variables to tell the app how to connect to your SmartThings account.",
+  "finishConfigurationInstruction": "You need to set the following environment variables:",
+  "tokenGenerateTip": "API token from SmartThings. Can be generated here: {0}",
+  "tokenPermissionTip": "Basically, you need to create a new token with the permission to launch scenes {0}.",
+  "sceneIdDescription": "Scene ID from SmartThings.",
+  "sceneIdHowGetButton": "How to get the Scene ID",
+  "pinTableDescription": "Pin code to access the app.",
+  "vercelTip": "* If you are using Vercel, you can set these variables in the Vercel dashboard.",
+  "rebuildTip": "Do not forget to rebuild your app after setting the variables.",
+  "checkConfigurationButton": "Check Configuration",
+  "configRequiredAlertTitle": "Configuration required",
+  "configRequiredAlertDescription": "There are missing some configuration keys in your app environment",
+  "scenesLister": "Scenes Lister"
+}

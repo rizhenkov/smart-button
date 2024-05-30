@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' }
   },
-  modules: ['@nuxtjs/eslint-module', '@vueuse/nuxt', '@nuxt/ui'],
+  modules: ['@nuxtjs/eslint-module', '@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/i18n'],
   runtimeConfig: {
     smartThingsApiUrl: '',
     smartThingsApiToken: '',
